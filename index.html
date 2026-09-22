@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casamesa — Próximamente en Madrid</title>
+  <meta name="description" content="Casamesa: experiencias gastronómicas en Madrid. Comer, beber, compartir. Próximamente.">
+  <meta name="theme-color" content="#14352A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Casamesa — Próximamente en Madrid">
+  <meta property="og:description" content="Experiencias gastronómicas. Buena comida, mejores personas.">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" type="image/svg+xml" href="assets/casamesa_wordmark_burdeos.svg">
+  <link rel="preload" as="image" href="assets/casamesa_olives_burdeos.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&family=Rubik:wght@900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --crema: #EFE6D3;
+      --burdeos: #6B1214;
+      --verde: #14352A;
+      --pad: clamp(24px, 4vw, 64px);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--crema);
+      color: var(--verde);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+    img { display: block; height: auto; }
+
+    .label {
+      font-family: "Archivo", sans-serif;
+      font-weight: 600;
+      font-size: clamp(11px, 0.9vw, 13px);
+      line-height: 1.7;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .display {
+      font-family: "Rubik", sans-serif;
+      font-weight: 900;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    /* Crema side: the announcement */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: clamp(32px, 6vh, 64px);
+      padding: var(--pad);
+    }
+    .logo { width: clamp(260px, 38vw, 560px); } /* brand guide: min. 260px for the olives version */
+    .copy {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    h1 {
+      font-size: clamp(36px, 5.4vw, 104px);
+      color: var(--burdeos);
+    }
+
+    /* Verde side: the brand's voice */
+    aside {
+      background: var(--verde);
+      color: var(--crema);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+      padding: var(--pad);
+    }
+    aside figure {
+      margin-block: auto; /* centre the illustration + promise in the panel */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: clamp(24px, 4vh, 40px);
+    }
+    aside img { width: clamp(120px, 14vw, 220px); }
+    .promise { font-size: clamp(32px, 3.6vw, 56px); }
+    .pillars {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      list-style: none;
+    }
+
+    /* Phones and narrow tablets: stack, announcement first */
+    @media (max-width: 820px) {
+      body { grid-template-columns: minmax(0, 1fr); }
+      main { min-height: 78svh; }
+      aside { gap: 32px; }
+      .logo { width: clamp(260px, 72vw, 440px); }
+      h1 { font-size: clamp(30px, 10vw, 80px); }
+      .promise { font-size: clamp(32px, 9vw, 48px); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="assets/casamesa_olives_burdeos.png" alt="Casamesa" width="1400" height="658">
+    <div class="copy">
+      <p class="label">Experiencias gastronómicas</p>
+      <h1 class="display">Próximamente</h1>
+      <p class="label">Madrid</p>
+    </div>
+  </main>
+
+  <aside aria-label="Sobre Casamesa">
+    <figure>
+      <img src="assets/artichoke_crema.png" alt="" width="477" height="505">
+      <p class="display promise">Buena comida<br>mejores<br>personas</p>
+    </figure>
+    <ul class="pillars label">
+      <li>Comer<br>Beber<br>Compartir</li>
+    </ul>
+  </aside>
+</body>
+</html>
